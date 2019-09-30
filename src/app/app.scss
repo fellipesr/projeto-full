@@ -1,0 +1,32 @@
+// App Styles
+// ----------------------------------------------------------------------------
+// Put style rules here that you want to apply to the entire application. These 
+// styles are for the entire app and not just one component. Additionally, this 
+// file can hold Sass mixins, functions, and placeholder classes to be imported 
+// and used throughout the application.
+
+.toolbar-background {
+
+    background-color: #0f679a !important;
+}
+
+ion-toolbar {
+    --background: #0f679a !important;
+    color: #fff;
+ }
+
+ .sc-ion-card-md-h {
+
+    -webkit-margin-start: 0px; 
+     margin-inline-start: 0px; 
+    -webkit-margin-end: 0px; 
+     margin-inline-end: 0px; 
+ }
+
+ ion-tab-bar {
+    --color: #fff !important;
+    --background: #0f679a !important;
+}
+ion-tab-button{
+    --color-selected: #defffc;
+}

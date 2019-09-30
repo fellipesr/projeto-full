@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title text-center>
+      <a href="http://fullengenharia.com.br" target="_blank"><img src="assets/img/logo.png"
+          style="float: left; width: 100%;max-width: 15%; height: auto;"></a> <span style="font-weight:bold; height: 100%; left: 0; position: absolute;
+        text-align: center;
+        top: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;">Peça Uma Proposta</span>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding scrollX="true">
+
+  <ion-card>
+    <ion-item>
+      <ion-label floating>Nome:</ion-label>
+      <ion-input type="text" name="name" [(ngModel)]="name" required="required" minlength="4"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Empresa:</ion-label>
+      <ion-input type="text" name="empresa" [(ngModel)]="empresa" required="required" minlength="4"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Tipo de Projeto:</ion-label>
+      <ion-input type="text" name="projeto" [(ngModel)]="projeto" required="required" minlength="3"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Descrição:</ion-label>
+      <ion-textarea type="text" name="descricao" [(ngModel)]="descricao" required="" minlength="3"></ion-textarea>
+    </ion-item>
+
+    <ion-button class="ion-margin-top" (click)="captureImage()">Anexar Imagem</ion-button>
+    <ion-button (click)="openLocalPdf()">Anexar Check List</ion-button>
+    <ion-button (click)="downloadAndOpenPdf()">Download Check List</ion-button>
+    <ion-button class="ion-margin-bottom" type="submit" (click)="sendEmail()">Enviar Proposta</ion-button>
+  </ion-card>
+
+  <ion-card *ngIf="currentImage ">
+    <ion-card-content text-center>
+      <ion-icon name="image"></ion-icon> Imagem anexada com sucesso!
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="oppenpdf ">
+    <ion-card-content text-center>
+      <ion-icon name="document"></ion-icon> Arquivo anexado com sucesso!
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>
